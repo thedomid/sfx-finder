@@ -1,0 +1,6 @@
+# Test-only deps. Deliberately excludes torch/transformers/librosa/soundfile —
+# the test suite only exercises pure logic (config loading, file filtering,
+# key-presence checks), never the actual CLAP model, so CI stays fast.
+pytest>=7.0
+numpy>=1.24
+requests>=2.31

@@ -1,5 +1,8 @@
 # sfx-finder
 
+[![tests](https://github.com/thedomid/sfx-finder/actions/workflows/test.yml/badge.svg)](https://github.com/thedomid/sfx-finder/actions/workflows/test.yml)
+[![license](https://img.shields.io/github/license/thedomid/sfx-finder)](LICENSE)
+
 A [Claude Code](https://claude.com/claude-code) skill for video editors. Finds sound effects, in this order:
 
 1. **Your own library** — semantic search over sound files you already own, by text description or by a reference clip (including one you extract straight out of a video). Runs locally and free, using [CLAP](https://huggingface.co/laion/clap-htsat-unfused) audio embeddings.
@@ -86,6 +89,10 @@ python scripts/generate_sfx.py --text "deep cinematic impact with reverb tail" -
 
 - Freesound (free): https://freesound.org/apiv2/apply/
 - ElevenLabs (paid): https://elevenlabs.io/app/settings/api-keys
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) — dev setup only needs `pip install -r requirements-dev.txt`, no torch/GPU required to run the test suite.
 
 ## License
 

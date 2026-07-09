@@ -21,13 +21,7 @@ import config
 API_URL = "https://api.elevenlabs.io/v1/sound-generation"
 
 
-def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--text", required=True, help="Description of the sound to generate")
-    parser.add_argument("--duration", type=float, default=None, help="Seconds, 0.5-22 (default: auto)")
-    parser.add_argument("--output", default="generated.mp3", help="Output file path")
-    args = parser.parse_args()
-
+def _require_key():
     if not config.ELEVENLABS_API_KEY:
         print(
             "No ElevenLabs API key set. Get a key at "
@@ -36,6 +30,16 @@ def main():
             file=sys.stderr,
         )
         sys.exit(1)
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--text", required=True, help="Description of the sound to generate")
+    parser.add_argument("--duration", type=float, default=None, help="Seconds, 0.5-22 (default: auto)")
+    parser.add_argument("--output", default="generated.mp3", help="Output file path")
+    args = parser.parse_args()
+
+    _require_key()
 
     payload = {"text": args.text}
     if args.duration is not None:
