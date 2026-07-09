@@ -19,7 +19,7 @@ A [Claude Code](https://claude.com/claude-code) skill for video editors. Finds s
 ## Install
 
 ```bash
-git clone https://github.com/<your-username>/sfx-finder ~/.claude/skills/sfx-finder
+git clone https://github.com/thedomid/sfx-finder ~/.claude/skills/sfx-finder
 cd ~/.claude/skills/sfx-finder
 pip install -r requirements.txt
 ```
